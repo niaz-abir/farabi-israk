@@ -5,9 +5,7 @@ import { MdOutlinePermPhoneMsg } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { AiOutlineMenuFold } from "react-icons/ai";
-
-import image3 from "../../public/images/clothlogo.png";
-import Image from "next/image";
+import { MdVideoLibrary } from "react-icons/md";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,17 +31,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="bg-[#f3eddd] shadow-md shadow-[#b1aa9c] ml-0 lg:ml-6 mr-0 lg:mr-6 rounded-sm">
+    <div className="bg-[#0a202d] shadow-md shadow-[#0a202d] ml-0 lg:ml-6 mr-0 lg:mr-6 rounded-sm">
       <nav className="mt-2">
         <div className="max-w-screen-xl flex flex-wrap items-center  justify-between mx-auto p-4">
-          {/* <h1 className="flex gap-2 ml-0 lg:-ml-8 items-center text-2xl">
-            <GiBee size={35} />
-            <Link href="/">Clothings Bee</Link>
-          </h1> */}
-          <Link href="/">
-            {" "}
-            <Image src={image3} alt="" height={40} width={200} />
-          </Link>
+          <h1 className="flex gap-2 ml-0 lg:-ml-8 text-white font-bold items-center text-3xl">
+            <MdVideoLibrary size={35} />
+            <Link href="/">TUHINFX</Link>
+          </h1>
 
           {/* <img src={image3} alt=""/> */}
           <button
@@ -63,53 +57,46 @@ const Navbar = () => {
             } w-full md:block md:w-auto`}
             id="navbar-default"
           >
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 text-black  ">
+            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 text-white  ">
               <li>
                 <Link
                   href="about-us"
-                  className="block py-2 px-3 text-[20px] lg:w-full  w-36 text-black rounded md:border-0"
+                  className="block py-2 px-3 text-[20px] lg:w-full  w-36 text-white rounded md:border-0"
                 >
-                  About us
+                  Service
                 </Link>
               </li>
               <li>
                 <a
                   href="/#services"
-                  className="block py-2 px-3 text-[20px] lg:w-full   w-36 text-black rounded md:border-0"
+                  className="block py-2 px-3 text-[20px] lg:w-full   w-36 text-white rounded md:border-0"
                 >
-                  T-Shirts
+                  Work
                 </a>
               </li>
               <li>
                 <a
                   href="/#package"
-                  className="block py-2 px-3 text-[20px] lg:w-full   w-36 text-black rounded md:border-0"
+                  className="block py-2 px-3 text-[20px] lg:w-full   w-36 text-white rounded md:border-0"
                 >
-                  Caps
+                  Faq
                 </a>
               </li>
               <li>
                 <a
                   href="/#package"
-                  className="block py-2 px-3 text-[20px] lg:w-full   w-36 text-black rounded md:border-0"
+                  className="block py-2 px-3 text-[20px] lg:w-full   w-36 text-white rounded md:border-0"
                 >
-                  Hoodies
+                  Testimonial
                 </a>
               </li>
-              <li>
-                <Link
-                  href="contact-us"
-                  className="block py-2 px-3 text-[20px] lg:w-full  w-36 text-black rounded md:border-0"
-                >
-                  Contact Us
-                </Link>
-              </li>
+
               <li>
                 <a
                   href="tel:+1 716 406 7972"
-                  className="p-2 flex items-center gap-2 text-[20px] lg:w-full bg-gradient-to-r from-[#e05c2c] to-[#FD3B29]  w-56 text-white rounded md:border-0"
+                  className="p-2 flex items-center gap-2 text-[20px] lg:w-full bg-pink-500  w-56 text-white rounded md:border-0"
                 >
-                  <MdOutlinePermPhoneMsg /> +1 (425) 548-4872
+                  <MdOutlinePermPhoneMsg /> +880 1648-680963
                 </a>
               </li>
             </ul>
@@ -119,10 +106,10 @@ const Navbar = () => {
       {isScrolled && (
         <div className="fixed bottom-10 right-10 z-50">
           <a
-            href="https://wa.me/+1 425 548-4872"
+            href="https://wa.me/+880 1648-680963"
             target="_blank"
             rel="noopener noreferrer"
-            className=" p-3 rounded-full shadow-lg text-black"
+            className=" p-3 rounded-full shadow-lg text-white"
           >
             <FaWhatsapp
               size={50}

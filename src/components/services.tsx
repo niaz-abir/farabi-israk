@@ -13,7 +13,7 @@ const Services = () => {
   const allServices = [
     {
       id: 1,
-      name: "Custom Cap Design",
+      name: "Documentary video",
       no: "01",
       icon: <RiPaintBrushLine />,
       details:
@@ -21,7 +21,7 @@ const Services = () => {
     },
     {
       id: 2,
-      name: "T-Shirt Printing",
+      name: "Podcast",
       no: "02",
       icon: <RiTShirt2Line />,
       details:
@@ -29,7 +29,7 @@ const Services = () => {
     },
     {
       id: 3,
-      name: "Bulk Apparel Orders",
+      name: "Shorts video",
       no: "03",
       icon: <FiShoppingBag />,
       details:
@@ -43,7 +43,7 @@ const Services = () => {
         <h1 className="font-bold text-center text-4xl">
           Discover Our Services
         </h1>
-        <p className="text-[18px] text-black">
+        <p className="text-[18px] text-white">
           From crafting unique apparel to delivering exceptional customer
           experiences, <br /> we provide solutions that drive your clothing
           business forward.
@@ -53,7 +53,7 @@ const Services = () => {
         {allServices.map((service) => (
           <motion.div
             key={service.id}
-            className="bg-[#e7dec7] rounded-md p-4 lg:w-96 m-6"
+            className="bg-[#0c1c29] text-white rounded-md p-4 lg:w-96 m-6"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -80,7 +80,7 @@ const Services = () => {
                 }}
                 transition={{ duration: 0.7 }}
               >
-                <span className="text-[#FD3B29] p-2 rounded-md">
+                <span className="text-pink-500 p-2 rounded-md">
                   {service.icon}
                 </span>
                 {service.name}
