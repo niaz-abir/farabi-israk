@@ -1,11 +1,11 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
-import { GiBee } from "react-icons/gi";
 import { MdOutlinePermPhoneMsg } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { AiOutlineMenuFold } from "react-icons/ai";
-import { MdVideoLibrary } from "react-icons/md";
+import { PiFilmSlateLight } from "react-icons/pi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,94 +31,110 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="bg-[#0a202d] shadow-md shadow-[#0a202d] ml-0 lg:ml-6 mr-0 lg:mr-6 rounded-sm">
-      <nav className="mt-2">
-        <div className="max-w-screen-xl flex flex-wrap items-center  justify-between mx-auto p-4">
-          <h1 className="flex gap-2 ml-0 lg:-ml-8 text-white font-bold items-center text-3xl">
-            <MdVideoLibrary size={35} />
-            <Link href="/">TUHINFX</Link>
-          </h1>
+    <>
+      {/* Changed from 'fixed' to 'sticky' so it stays at the top but remains 
+        part of the natural document flow. This allows it to push content down 
+        when its height increases on mobile toggle.
+      */}
+      <nav className="bg-[#202020] shadow-md shadow-[#232323] sticky top-0 left-0 w-full z-50 backdrop-blur-sm transition-all duration-300">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between p-4">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3">
+            <PiFilmSlateLight
+              size={42}
+              className="text-orange-500 flex-shrink-0"
+            />
+            <div className="flex flex-col overflow-hidden">
+              <h1 className="text-white text-xl md:text-2xl font-bold tracking-wider">
+                FARABI SAMIR
+              </h1>
+              <span className="text-orange-400 text-xs md:text-sm whitespace-nowrap overflow-hidden animate-pulse">
+                Film editor • Cinematic Storytelling
+              </span>
+            </div>
+          </Link>
 
-          {/* <img src={image3} alt=""/> */}
+          {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            data-collapse-toggle="navbar-default"
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm   rounded-lg md:hidden text-[24px] focus:outline-none "
-            aria-controls="navbar-default"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-white rounded-lg md:hidden focus:outline-none"
             aria-expanded={isMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
-            <AiOutlineMenuFold size={40} />
+            <AiOutlineMenuFold size={32} />
           </button>
+
+          {/* Menu */}
           <div
             className={`${
               isMenuOpen ? "block" : "hidden"
-            } w-full md:block md:w-auto`}
-            id="navbar-default"
+            } w-full md:block md:w-auto transition-all duration-300`}
           >
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 text-white  ">
+            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 md:mt-0 rounded-lg md:flex-row md:space-x-8 text-white">
               <li>
                 <Link
-                  href="about-us"
-                  className="block py-2 px-3 text-[20px] lg:w-full  w-36 text-white rounded md:border-0"
+                  href="/services"
+                  className="block py-2 px-3 text-lg lg:text-[20px]"
                 >
-                  Service
+                  Services
                 </Link>
               </li>
               <li>
                 <a
-                  href="/#services"
-                  className="block py-2 px-3 text-[20px] lg:w-full   w-36 text-white rounded md:border-0"
+                  href="/#work"
+                  className="block py-2 px-3 text-lg lg:text-[20px]"
                 >
                   Work
                 </a>
               </li>
               <li>
-                <a
-                  href="/#package"
-                  className="block py-2 px-3 text-[20px] lg:w-full   w-36 text-white rounded md:border-0"
+                <Link
+                  href="/about-us"
+                  className="block py-2 px-3 text-lg lg:text-[20px]"
                 >
-                  Faq
-                </a>
+                  About Us
+                </Link>
               </li>
               <li>
                 <a
-                  href="/#package"
-                  className="block py-2 px-3 text-[20px] lg:w-full   w-36 text-white rounded md:border-0"
+                  href="/#testimonial"
+                  className="block py-2 px-3 text-lg lg:text-[20px]"
                 >
                   Testimonial
                 </a>
               </li>
-
-              <li>
+              <li className="mt-2 md:mt-0">
                 <a
-                  href="tel:+1 716 406 7972"
-                  className="p-2 flex items-center gap-2 text-[20px] lg:w-full bg-pink-500  w-56 text-white rounded md:border-0"
+                  href="tel:+8801648680963"
+                  className="flex items-center justify-center gap-2 px-4 py-2 rounded-md border-2 border-orange-500 text-white hover:bg-orange-500 transition-all duration-300"
                 >
-                  <MdOutlinePermPhoneMsg /> +880 1648-680963
+                  <MdOutlinePermPhoneMsg />
+                  +880 1736-489522
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+
+      {/* WhatsApp Floating Button */}
       {isScrolled && (
         <div className="fixed bottom-10 right-10 z-50">
           <a
-            href="https://wa.me/+880 1648-680963"
+            href="https://wa.me/8801736489522"
             target="_blank"
             rel="noopener noreferrer"
-            className=" p-3 rounded-full shadow-lg text-white"
+            className="block"
           >
             <FaWhatsapp
-              size={50}
-              className="p-2 text-[#25D366] bg-[#23131c] rounded-md"
+              size={55}
+              className="p-2 text-[#25D366] bg-[#23131c] rounded-xl shadow-lg hover:scale-110 transition-transform duration-300"
             />
           </a>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

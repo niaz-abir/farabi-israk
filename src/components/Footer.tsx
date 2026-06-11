@@ -1,76 +1,116 @@
-/* eslint-disable react/no-unescaped-entities */
-"use client";
-import React from "react";
 import {
-  FaCodeBranch,
-  FaFacebookSquare,
+  FaXTwitter,
   FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
-import { motion } from "framer-motion";
-import image1 from "../../public/images/WhatsApp_Image_2024-08-05_at_03.20.56_95cc1b03-removebg-preview.png";
-import Image from "next/image";
-import Link from "next/link";
+  FaFacebookF,
+  FaYoutube,
+} from "react-icons/fa6";
 
-const Footer = () => {
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true, amount: 0.3 }}
-      className="mt-24 pb-6  bg-[#0a202d] shadow-md  "
-    >
-      <footer className="footer text-white p-10">
-        <div>
-          <h1 className="text-[25px] font-bold">"Discover New Horizons,</h1>
-          <h1 className="text-[25px] font-bold">
-            Empower Your Business to Thrive"
-          </h1>
-          <button className="p-4 mt-4 pl-2 bg-pink-500 border-none rounded-md text-[18px] text-white font-bold transition-all duration-300  ">
-            <Link href="contact-us" className="pt-2">
-              Let's Connect
-            </Link>
-          </button>
-        </div>
+    <footer className="w-full py-8 bg-[#202020] shadow-md shadow-[#232323] text-orange-600">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto">
+          {/* Brand Logo Link */}
+          <a
+            href="https://pagedone.io/"
+            className="flex justify-center"
+            aria-label="Pagedone Home"
+          ></a>
 
-        <nav className="font-semibold text-[16px]">
-          <h6 className="font-bold text-white text-[18px]">Services</h6>
-          <a className="link link-hover text-white">podcast</a>
-          <a className="link link-hover text-white">Documentary</a>
-          <a className="link link-hover text-white">shorts</a>
-        </nav>
-        <nav className="font-semibold text-[16px] text-white">
-          <h6 className="font-bold text-white text-[18px]">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-        </nav>
-        <nav>
-          <h6 className="font-semibold text-[16px]">Address</h6>
-          <p className="text-[20px]"> 2510 164th St Apt F207,</p>
-          <p className="text-[20px]">
-            {" "}
-            Lynnwood, Washington 98087, United States.
-          </p>
-          <h6 className="font-semibold text-[16px] pt-2">Number:</h6>
-          <p className="text-[20px]">+1 (425) 548-4872 </p>
-        </nav>
-      </footer>
-      <div className="flex justify-between p-2 mt-4">
-        <div>
-          <h4>Copyright©tuhinfx2024 </h4>
-        </div>
-        <div className="flex gap-2">
-          <Link href="https://www.facebook.com/clothingsbeeuk/">
-            <FaFacebookSquare className="text-3xl " />
-          </Link>
-          <Link href="http://instagram.com/clothingsbeeuk/">
-            <FaInstagram className="text-3xl" />
-          </Link>
+          {/* Navigation Menu Links */}
+
+          <div>
+            <ul className="text-lg flex items-center justify-center flex-col gap-7 md:flex-row md:gap-12 transition-all duration-500 py-16 mb-10 border-b border-gray-200">
+              <li>
+                <a
+                  href="about-us"
+                  className="text-orange-600 hover:text-orange-600transition-colors"
+                >
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-orange-600 hover:text-orange-600transition-colors"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-orange-600 hover:text-orange-600transition-colors"
+                >
+                  Project
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-orange-600 hover:text-orange-600transition-colors"
+                >
+                  Testimonial
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-orange-600 hover:text-orange-600transition-colors"
+                >
+                  Support
+                </a>
+              </li>
+            </ul>
+
+            <div className="text-center mb-10">
+              <p className="text-gray-200 text-lg">
+                Email: farabisamir54@gmail.com
+              </p>
+            </div>
+          </div>
+
+          {/* Social Media Links (Using React Icons) */}
+          <div className="flex space-x-10 justify-center items-center mb-14">
+            <a
+              href="#"
+              className="text-orange-600transition-all duration-500 hover:text-indigo-600"
+              aria-label="X (Twitter)"
+            >
+              <FaXTwitter className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.instagram.com/israk.farabi/"
+              className="text-orange-600transition-all duration-500 hover:text-indigo-600"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="w-6 h-6" />
+            </a>
+            <a
+              href="#"
+              className="transition-all duration-500 hover:text-indigo-600"
+              aria-label="Facebook"
+            >
+              <FaFacebookF className="w-5 h-6" />
+            </a>
+            <a
+              href="#"
+              className="text-orange-600transition-all duration-500 hover:text-indigo-600"
+              aria-label="YouTube"
+            >
+              <FaYoutube className="w-7 h-6" />
+            </a>
+          </div>
+
+          {/* Copyright Section */}
+          <span className="text-lg text-gray-500 text-center block">
+            © <a className="hover:underline">farabisamir</a> {currentYear}, All
+            rights reserved.
+          </span>
         </div>
       </div>
-    </motion.div>
+    </footer>
   );
-};
-
-export default Footer;
+}

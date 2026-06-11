@@ -37,9 +37,7 @@ export default function VideoSection() {
   ];
 
   const shortVideos: string[] = [
-
-    "MeroDjCIKtkKmWmJ",
-   
+    "RgKAFK5djSk",
     "aqz-KE-bpKQ",
     "V-_O7nl0Ii0",
     "hT_nvWreIhg",
@@ -51,7 +49,7 @@ export default function VideoSection() {
     <section className=" text-white py-20">
       <div className="max-w-6xl mx-auto px-6">
         {/* ================= YOUTUBE VIDEOS ================= */}
-        <div className="bg-gradient-to-tr from-black to-[#1a1333] rounded-3xl p-10 border border-white/10 shadow-lg">
+        <div className="bg-gradient-to-tr from-black to-[#1c1c1c] rounded-3xl p-10 border border-white/10 shadow-lg">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold">
               Our Recent Work
@@ -62,7 +60,7 @@ export default function VideoSection() {
               and more subscribers.
             </p>
 
-            <button className="mt-6 bg-pink-500 px-6 py-3 rounded-full transition">
+            <button className="mt-6 bg-orange-600 px-6 py-3 rounded-full transition">
               Explore pricing →
             </button>
           </div>
@@ -76,7 +74,7 @@ export default function VideoSection() {
         </div>
 
         {/* ================= SHORT FORM VIDEOS ================= */}
-        <div className="bg-gradient-to-tr from-black to-[#1a1333] rounded-3xl p-10 border border-white/10 shadow-lg mt-16">
+        <div className="bg-gradient-to-tr from-black to-[#1c1c1c] rounded-3xl p-10 border border-white/10 shadow-lg mt-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold">
               Short Form Videos
@@ -87,7 +85,7 @@ export default function VideoSection() {
               engagement and shareability.
             </p>
 
-            <button className="mt-6 bg-pink-500 px-6 py-3 rounded-full transition">
+            <button className="mt-6 bg-orange-600 px-6 py-3 rounded-full transition">
               Explore pricing →
             </button>
           </div>

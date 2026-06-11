@@ -1,101 +1,99 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
-import { FaPhotoVideo } from "react-icons/fa";
-import { GrAppsRounded } from "react-icons/gr";
-import { IoIosApps } from "react-icons/io";
-import { RiPaintBrushLine, RiTShirt2Line, RiWebhookLine } from "react-icons/ri";
-import { TfiWrite } from "react-icons/tfi";
-import { VscGraph } from "react-icons/vsc";
-import { FiShoppingBag } from "react-icons/fi";
+import { IoDocumentSharp } from "react-icons/io5";
+import { FaPodcast } from "react-icons/fa";
+import { Md3dRotation } from "react-icons/md";
+import { MdSettingsVoice } from "react-icons/md";
+import { TbBrandAirtable } from "react-icons/tb";
+import { PiFilmReel } from "react-icons/pi";
 
 const Services = () => {
   const allServices = [
     {
       id: 1,
-      name: "Documentary video",
-      no: "01",
-      icon: <RiPaintBrushLine />,
+      name: "Documentary Video",
+      icon: <IoDocumentSharp />,
       details:
-        "Create personalized caps that showcase your unique style. From trendy designs to brand logos, we bring your vision to life.",
+        "Cinematic documentary editing with smooth storytelling, emotional pacing, and professional color grading for impactful visual narratives.",
     },
     {
       id: 2,
       name: "Podcast",
-      no: "02",
-      icon: <RiTShirt2Line />,
+      icon: <FaPodcast />,
       details:
-        "Get high-quality t-shirts printed with your custom designs. Perfect for personal use, events, or promoting your brand.",
+        "Professional podcast editing with clean audio enhancement, noise reduction, and engaging video sync for better audience experience.",
     },
     {
       id: 3,
-      name: "Shorts video",
-      no: "03",
-      icon: <FiShoppingBag />,
+      name: "Shorts Video",
+      icon: <PiFilmReel />,
       details:
-        "Order caps and t-shirts in bulk with competitive pricing. Ideal for businesses, teams, or special events.",
+        "High-performing short-form videos optimized for TikTok, Instagram, and YouTube Shorts to boost reach and audience engagement.",
+    },
+    {
+      id: 4,
+      name: "Brand Building",
+      icon: <TbBrandAirtable />,
+      details:
+        "Strategic brand content creation that strengthens identity, improves recognition, and builds a consistent digital presence.",
+    },
+    {
+      id: 5,
+      name: "Voice Over",
+      icon: <MdSettingsVoice />,
+      details:
+        "Clear and professional voice-over editing with studio-level sound quality and smooth, natural audio delivery.",
+    },
+    {
+      id: 6,
+      name: "3D Animation",
+      icon: <Md3dRotation />,
+      details:
+        "Creative 3D animation services that bring ideas to life with realistic motion, cinematic visuals, and storytelling depth.",
     },
   ];
 
   return (
-    <section id="services">
-      <div className="text-center mb-14 mt-14 p-4">
-        <h1 className="font-bold text-center text-4xl">
-          Discover Our Services
-        </h1>
-        <p className="text-[18px] text-white">
-          From crafting unique apparel to delivering exceptional customer
-          experiences, <br /> we provide solutions that drive your clothing
-          business forward.
+    <section id="services" className="py-20 px-4">
+      {/* Header */}
+      <div className="text-center mb-14">
+        <h1 className="font-bold text-4xl text-white">Discover Our Services</h1>
+        <p className="text-gray-300 mt-4 text-lg">
+          Professional video editing and creative media solutions for modern
+          brands
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+      {/* Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {allServices.map((service) => (
           <motion.div
             key={service.id}
-            className="bg-[#0c1c29] text-white rounded-md p-4 lg:w-96 m-6"
+            className="group relative bg-[#282828] lg:w-96 text-white rounded-lg p-6 overflow-hidden cursor-pointer"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <motion.div
-              className="p-4"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={{
-                visible: {
-                  transition: {
-                    staggerChildren: 0.4,
-                  },
-                },
-              }}
-            >
-              <motion.h1
-                className="font-bold flex  rounded-md gap-2 pb-2 pt-2 text-[20px] lg:text-[28px] items-center"
-                variants={{
-                  hidden: { opacity: 0, x: -50 },
-                  visible: { opacity: 1, x: 0 },
-                }}
-                transition={{ duration: 0.7 }}
-              >
-                <span className="text-pink-500 p-2 rounded-md">
-                  {service.icon}
-                </span>
+            {/* Animated Border */}
+            <span className="absolute top-0 left-0 h-[2px] w-0 bg-orange-500 group-hover:w-full transition-all duration-500"></span>
+            <span className="absolute top-0 right-0 w-[2px] h-0 bg-orange-500 group-hover:h-full transition-all duration-500 delay-100"></span>
+            <span className="absolute bottom-0 right-0 h-[2px] w-0 bg-orange-500 group-hover:w-full transition-all duration-500 delay-200"></span>
+            <span className="absolute bottom-0 left-0 w-[2px] h-0 bg-orange-500 group-hover:h-full transition-all duration-500 delay-300"></span>
+
+            {/* Content */}
+            <div className="relative z-10">
+              <h2 className="flex items-center gap-3 text-2xl font-bold mb-4">
+                <span className="text-orange-500 text-3xl">{service.icon}</span>
                 {service.name}
-              </motion.h1>
-              <motion.h2
-                className="text-[18px] pt-4 pb-6"
-                variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                transition={{ duration: 0.5 }}
-              >
+              </h2>
+
+              <p className="text-gray-300 text-[16px] leading-relaxed">
                 {service.details}
-              </motion.h2>
-            </motion.div>
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>

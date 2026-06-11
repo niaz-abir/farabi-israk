@@ -50,7 +50,7 @@ const ChooseUs = () => {
 
   return (
     <section>
-      <section className="mt-16 mb-8 mr-0 lg:mr-8 rounded-sm bg-[#BFC9D1] p-4">
+      <section className="mt-16 mb-8 mr-0 lg:mr-8 rounded-sm  p-4">
         <h1 className="font-bold text-center text-black text-4xl pt-4">
           Why Choose us?
         </h1>
