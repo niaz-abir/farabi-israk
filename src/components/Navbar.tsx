@@ -104,13 +104,25 @@ const Navbar = () => {
                   Testimonial
                 </a>
               </li>
+
               <li className="mt-2 md:mt-0">
                 <a
                   href="tel:+8801648680963"
-                  className="flex items-center justify-center gap-2 px-4 py-2 rounded-md border-2 border-orange-500 text-white hover:bg-orange-500 transition-all duration-300"
+                  className="flex items-center justify-center gap-2 rounded-md border-2 border-orange-500 px-4 py-2 text-white transition-all duration-300 hover:bg-orange-500"
                 >
                   <MdOutlinePermPhoneMsg />
                   +880 1736-489522
+                </a>
+              </li>
+
+              <li className="mt-2 md:mt-0">
+                <a
+                  href="https://drive.google.com/drive/folders/1XIUZKiuJhtSw0iMN8wA21anKGrBOaB_s"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center rounded-md border-2 border-orange-500 bg-orange-500 px-5 py-2 text-white transition-all duration-300 hover:bg-transparent hover:text-orange-400"
+                >
+                  View My Work →
                 </a>
               </li>
             </ul>
